@@ -91,6 +91,7 @@ const isBlockValid = (candidateBlock: Block, previousBlock: Block): boolean => {
   } else if (previousBlock.hash !== candidateBlock.previousHash) {
     return false;
   } else if (getHashforBlock(candidateBlock) !== candidateBlock.hash) {
+    // 기존 block 의 hash 를 다시 계산하여 비교 : 다르면 false
     return false;
   } else {
     return true;
